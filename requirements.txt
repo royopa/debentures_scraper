@@ -1,0 +1,9 @@
+pipenv
+pandas
+tqdm
+requests
+xlrd
+requests-html
+wget
+bizdays
+bs4
