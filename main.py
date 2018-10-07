@@ -26,6 +26,7 @@ def get_links():
         if len(ativo) < 6:
             continue
         
+        ativo = ativo.replace(' ', '+')
         url_download = url_base + 'puhistorico_e.asp?op_exc=False&dt_ini=&dt_fim=&Submit.x=34&Submit.y=13&ativo='+ativo+'++++'
         urls.append({'ativo': ativo,'url':url_download})
 
