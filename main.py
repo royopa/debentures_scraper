@@ -60,7 +60,7 @@ def main():
         utils.download(url['url'], None, path_file)
         time.sleep(1)
 
-        if index > 0 and index % 300 == 0:
+        if index > 0 and index % 50 == 0:
             print('Aguardando 30 segundos, para evitar timeout')
             time.sleep(30)
 
