@@ -47,11 +47,16 @@ def main():
     utils.prepare_download_folder('downloads')
 
     urls = get_links()
-    for url in urls:
+    for index, url in enumerate(urls):
         name_file = url['ativo']+'.csv'
         path_file = os.path.join('downloads', name_file)
         print(' Baixando arquivo do ativo', url['ativo'], name_file)
         utils.download(url['url'], None, path_file)
+        time.sleep(1)
+
+        if index / 500:
+            print('Aguardando 30 segundos, para evitar timeout')
+            time.sleep(30)
 
 
 if __name__ == '__main__':
