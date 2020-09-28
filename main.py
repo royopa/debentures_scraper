@@ -38,7 +38,6 @@ def get_links():
         url = f'{url}puhistorico_e.asp?'
         url = f'{url}op_exc=False&dt_ini=&Submit.x=34&Submit.y=13'
         url = f"{url}&dt_fim={today.strftime('%d/%m/%Y')}&ativo={ativo}++++"
-        print(url)
         urls.append({'ativo': ativo, 'url': url})
 
     return urls
