@@ -4,6 +4,7 @@ import csv
 import datetime
 import os
 import random
+import time
 from datetime import timedelta
 
 import pandas as pd
@@ -34,7 +35,22 @@ def check_download(dt_referencia, file_name):
 
 def download(url, params, file_name):
     headers = {'User-Agent': random.choice(load_useragents())}
-    response = requests.get(url, params=params, stream=True, headers=headers)
+    try:
+        response = requests.get(
+            url, params=params, stream=True, headers=headers
+        )
+    except Exception:
+        time.sleep(30)
+        try:
+            response = requests.get(
+                url, params=params, stream=True, headers=headers
+            )
+        except Exception:
+            time.sleep(60)
+            response = requests.get(
+                url, params=params, stream=True, headers=headers
+            )
+
     if response.status_code != 200:
         'Nenhum arquivo encontrado nessa url'
         return False
