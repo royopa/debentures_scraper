@@ -12,6 +12,7 @@ def main():
     file_path = os.path.join('bases', 'debentures.csv')
     if os.path.exists(file_path):
         df_base = pd.read_csv(file_path)
+        df_base = df_base[df_base['data_referencia'] != 'data_referencia']
         df_base['data_referencia'] = pd.to_datetime(df_base['data_referencia'])
         print('Máxima data de referência', df_base['data_referencia'].max())
 
@@ -77,3 +78,7 @@ def main():
     # salva o arquivo de saída
     print('Salvando resultado capturado no arquivo', file_path)
     df.to_csv(file_path, mode='a', index=False)
+
+
+if __name__ == '__main__':
+    main()
