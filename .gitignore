@@ -18,7 +18,8 @@ lib/
 lib64/
 parts/
 sdist/
-bases/*
+bases/
+bases/debentures.csv
 var/
 wheels/
 *.egg-info/
