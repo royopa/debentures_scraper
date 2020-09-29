@@ -4,6 +4,7 @@ import csv
 import datetime
 import os
 import random
+import shutil
 import time
 from datetime import timedelta
 
@@ -82,6 +83,9 @@ def isbizday(dt_referencia):
 
 def prepare_download_folder(name_download_folder):
     path_download = os.path.join('downloads')
+    if os.path.exists(path_download):
+        shutil.rmtree(path_download)
+        os.makedirs(path_download)
     if not os.path.exists(path_download):
         os.makedirs(path_download)
     return path_download
