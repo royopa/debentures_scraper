@@ -77,7 +77,7 @@ def main():
 
     # salva o arquivo de saída
     print('Salvando resultado capturado no arquivo', file_path)
-    df.to_csv(file_path, mode='a', index=False)
+    df.to_csv(file_path, index=False)
 
 
 if __name__ == '__main__':
