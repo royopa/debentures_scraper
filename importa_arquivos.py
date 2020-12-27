@@ -75,9 +75,13 @@ def main():
     df['vr_preco_unitario'] = pd.to_numeric(
         df['vr_preco_unitario'], errors='coerce')
 
+    file_path = os.path.join('bases', 'debentures.csv')
+    if not os.path.exists(os.path.join('bases')):
+        os.mkdir('bases')
+
     # salva o arquivo de saída
     print('Salvando resultado capturado no arquivo', file_path)
-    df.to_csv(file_path, index=False)
+    df.to_csv(file_path, mode="a", index=False)
 
 
 if __name__ == '__main__':
