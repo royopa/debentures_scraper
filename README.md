@@ -8,6 +8,7 @@ Projeto para captura dos preços unitários das debêntures do site www.debentur
 
 ```
 > pip install --user pipenv
+> pipenv install
 > pipenv shell
 > python main.py
 ```
